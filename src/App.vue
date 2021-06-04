@@ -1,20 +1,38 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  
+    <div id="app" class="container-fluid mt-3">
+       <div class="jumbotron">
+          <h1>Agencia de Viajes Con Vue-Cli</h1>
+          <Navbar />
+     
+          <router-view></router-view>
+
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from './components/Navbar.vue'
+
+/* import HelloWorld from './components/HelloWorld.vue'
+import Login from './components/Login.vue'
+import Vuelos from './components/Vuelos.vue'
+ */
+
+
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    /* HelloWorld,
+    Login,
+    Vuelos */
+    Navbar
   }
 }
 </script>
+  
 
 <style>
 #app {
@@ -24,5 +42,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.jumbotron{
+  background-color: rgba(68, 32, 32, 0.986);
+  color:white;
 }
 </style>
