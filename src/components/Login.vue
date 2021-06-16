@@ -4,28 +4,33 @@
     <img class="logo" src="../assets/ort.png" alt="">
 
     <div>
-        <form class="formulario" >
-        <div id="dvMsg"></div>
-        <h1>Login</h1>
-        <div class="cont">
+        <form class="formulario" @submit.prevent="login" >
+         <!-- <div id="dvMsg"></div> -->
+           <h1>Login</h1>
+            <div class="cont">
                 
-            <div class="input-cont">
-            <i class="fas fa-envelope icon"></i>
-            <input type="text" id="txtCorreo" name="txtCorreo" placeholder="Correo Electronico">
+              <div class="input-cont">
+               <label for="email">
+               <!-- <input type="text" id="txtCorreo" name="txtCorreo" placeholder="Correo Electronico"> -->
+               <input v-model="email" type="email" id="txtCorreo" name="email" placeholder="Correo Electronico" value>
+               </label>
+              </div>
             
+              <div class="input-cont">
+                <label for="password">
+                <!-- <input type="password" id="txtContrasenia" name="txtContrasenia" placeholder="Contraseña"> -->
+                <input v-model="password" type="password" id="txtContrasenia" name="password" placeholder="Contraseña" value>
+                </label>
+              </div>
+              <!-- <input type="submit" value="Login" class="button" onclick="prueba();"> -->
+              <button class="button" type="submit" name="button"> Login </button>
+                <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+                <p>¿No tienes una cuenta? <a class="link" href="#">Registrate </a></p>
+
             </div>
-            
-            <div class="input-cont">
-            <i class="fas fa-key icon"></i>
-            <input type="password" id="txtContrasenia" name="txtContrasenia" placeholder="Contraseña">
-            
-            </div>
-            <input type="submit" value="Login" class="button" onclick="prueba();">
-            <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-            <p>¿No tienes una cuenta? <a class="link" href="registrarvista.html">Registrate </a></p>
-        </div>
         </form>
     </div>
+
     <br>
     <br>
     <br>
@@ -49,10 +54,22 @@
     },
     data () {
       return {
+        email: '',
+        password: ''
 
       }
     },
     methods: {
+    login () {
+        this.$store
+        .dispatch('login', {
+          email: this.email,
+          password: this.password
+        })
+        // .then(() => {
+        //   this.$router.push({ name: 'Sistema' })
+        // })
+    }
 
     },
     computed: {
@@ -90,7 +107,7 @@ h1{
     color: #1a2537;
     font-size: 40px;
 }
-input[type="text"],
+input[type="email"],
 input[type="password"]{
     font-size: 20px;
     width: 82%;

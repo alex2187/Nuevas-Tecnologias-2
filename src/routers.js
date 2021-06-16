@@ -7,6 +7,7 @@ import Reserva from './components/Reserva.vue'
 import Vuelos from './components/Vuelos.vue'
 import ApiRestFull from './components/ApiRestFull.vue'
 import Inicio from './components/Inicio.vue'
+import OrigenDestino from './components/OrigenDestino'
 
 
 
@@ -24,9 +25,8 @@ export  const router = new VueRouter({
         {path:'/vuelos', component:Vuelos},
         {path:'/reserva', component:Reserva},
         {path:'/apiRestFull', component:ApiRestFull},
-        {path:'/inicio', component:Inicio}
-
-
+        {path:'/inicio', name:'Home', component:Inicio},
+        {path:'/origenDestino', component:OrigenDestino},
 
     ]
 })

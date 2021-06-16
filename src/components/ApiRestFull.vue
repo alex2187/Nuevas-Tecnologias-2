@@ -1,9 +1,10 @@
 <template>
   <section class="src-components-api-rest-full">
     <div class="jumbotron">
-      <h1>Informe de Reservas</h1>
-      <hr />
+      <img class="logo" src="../assets/ort.png" alt="">
+      
 
+      <h1>Informe de Reservas</h1>
       <!-- <button class="btn btn-success mr-3" @click="getUsuarios()">GET</button>
       <button class="btn btn-info mr-3" @click="postUsuario()">POST</button>
 
@@ -57,10 +58,10 @@
 <!--  -----------------------------------------Prueba--------------------------------------- -->
 
 
-
-      <div class="media alert alert-info mt-3" v-for="(usuario,index) in usuarios" :key="index">
-          <img :src="usuario.Foto" width="180" :alt="usuario.Nombre" :style="{'border-radius': '10px'}">
-          <div class="media-body ml-4">
+    <div class="container">
+      <div class="" v-for="(usuario,index) in usuarios" :key="index">
+          <img :src="usuario.Foto" width="280" :alt="usuario.Nombre" :style="{'border-radius': '10px'}">
+          <div class="media-body ml-4 ">
             <h4><u>Usuario {{ index+1 }} - ID: {{usuario.id}}</u></h4>
             <br>
             <p>Nombre: <b>{{usuario.Nombre}}</b></p>
@@ -76,6 +77,7 @@
             <button class="btn btn-danger mr-3" @click="deleteUsuario(usuario.id)">DELETE</button>
 
           </div>
+        </div>
         </div>  
 
     </div>
@@ -251,15 +253,17 @@
 .src-components-api-rest-full {
 }
 .jumbotron {
-      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
-    background: #1e5799; /* Old browsers */
-    background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
-    color:#092f4e
+  background-image: url(../assets/fondo1.jpg);
+  background-size: 100vw 100vh;
 }
-hr{
-  background-color: #333;
+.container{
+   width: 550px;
+   background: rgba(00, 00, 00, 0.3);
 }
+h1{
+  font-family: "Latin Modern Roman 10";
+  font-style: oblique;
+  font-size: 50px;
+}
+
 </style>

@@ -25,12 +25,12 @@
             </router-link>          
           </li>
 
-           <!-- 
+           
           <li class="nav-item" >
-            <router-link to="/vuelos" >
-              <a class="nav-link" href="#">Vuelos</a>
+            <router-link to="/origenDestino" >
+              <a class="nav-link" href="#">CRUD Origen y Destino</a>
             </router-link>
-          </li> -->
+          </li> 
 
 
            <li class="nav-item" >
@@ -43,7 +43,11 @@
             <router-link to="/login">
               <a class="nav-link" href="#">Login</a>
             </router-link>
-          </li>
+           </li>
+
+          <button type="button" class="logoutButton" @click="logout">
+           Logout
+          </button>
 
         </ul>
       </div>
@@ -68,6 +72,10 @@
       }
     },
     methods: {
+      logout () {
+      this.$router.push({ name: 'Home' })
+      this.$store.dispatch('logout')
+    }
 
     },
     computed: {
